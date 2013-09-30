@@ -66,5 +66,9 @@ module Spree
       self.attachment_width = geometry.width
       self.attachment_height = geometry.height
     end
+
+    def self.categories_for_select
+      unscoped.pluck(:category).uniq.sort
+    end
   end
 end
