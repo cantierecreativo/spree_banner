@@ -15,7 +15,7 @@
 <%= render :partial => 'spree/admin/shared/banner_box_sub_menu' %>
 
 <% content_for :table_filter_title do %>
-  <%= Spree.t(:search) %>
+  <%= t(:search) %>
 <% end %>
 
 <% content_for :table_filter do %>
@@ -26,13 +26,13 @@
         <div data-hook="admin_banner_index_search">
           <div class="alpha four columns">
             <div class="field">
-              <%= f.label :category_eq, Spree.t(:category) %>
+              <%= f.label :category_eq, t(:category) %>
               <%= f.select :category_eq, Spree::BannerBox.categories_for_select, {:include_blank => true}, {:class => 'select2 fullwidth'} %>
             </div>
           </div>
           <div class="eight columns">
             <div class="field">
-              <%= f.label :url_cont, Spree.t(:url) %>
+              <%= f.label :url_cont, t(:url) %>
               <%= f.text_field :url_cont, :size => 15 %>
             </div>
           </div>
@@ -40,7 +40,7 @@
             <div class="field checkbox">
               <label>
                 <%= f.check_box :enabled_true %>
-                <%= Spree.t(:show_only_enabled) %>
+                <%= t(:show_only_enabled) %>
               </label>
             </div>
         </div>
@@ -48,7 +48,7 @@
         <div class="clear"></div>
 
         <div class="form-buttons actions filter-actions" data-hook="admin_banner_index_search_buttons">
-          <%= button Spree.t(:search), 'icon-search' %>
+          <%= button t(:search), 'icon-search' %>
         </div>
     <% end %>
   </div>
