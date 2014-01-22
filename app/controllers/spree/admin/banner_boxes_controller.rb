@@ -43,7 +43,7 @@ module Spree
         params[:q][:s] ||= "position asc"
 
         @search = super.ransack(params[:q])
-        @collection = @search.result.page(params[:page]).per(50)
+        @collection = @search.result.page(params[:page]).per(SpreeBanner::Config[:admin_banners_per_page])
       end
     end
   end
