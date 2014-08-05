@@ -10,11 +10,6 @@ module Spree
         redirect_to( :action => :edit )
       end
 
-      def update
-        @banner_box.enhance_settings
-        super
-      end
-
       def clone
         @new = @banner_box.duplicate
 
@@ -43,7 +38,7 @@ module Spree
         params[:q][:s] ||= "position asc"
 
         @search = super.ransack(params[:q])
-        @collection = @search.result.page(params[:page]).per(SpreeBanner::Config[:admin_banners_per_page])
+        @collection = @search.result.page(params[:page]).per(SpreeBanner::Config[:admin_sliders_per_page])
       end
     end
   end
